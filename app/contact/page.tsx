@@ -20,22 +20,16 @@ const ContactPage = () => {
     },
     {
       icon: Phone,
-      title: 'Phone Numbers',
+      title: 'Phone Number',
       details: [
-        'CEO Direct: 03033336212',
-        'Main Office: +92-51-1234567',
-        'Emergency: 03033336212',
-        'Fax: +92-51-1234568'
+        '03033336212'
       ]
     },
     {
       icon: Mail,
-      title: 'Email Addresses',
+      title: 'Email Address',
       details: [
-        'General Inquiries: info@finemedicine.com',
-        'Sales: sales@finemedicine.com',
-        'Support: support@finemedicine.com',
-        'Careers: careers@finemedicine.com'
+        'info@finemedicine.com'
       ]
     },
     {
@@ -50,24 +44,13 @@ const ContactPage = () => {
     }
   ];
 
+  // Keeping only Islamabad office
   const offices = [
     {
       city: 'Islamabad',
       address: 'Site 2851 Kahuta Road Humak',
       phone: '03033336212',
       manager: 'Capt (Retd.) Muhammad Younas Malik'
-    },
-    {
-      city: 'Lahore',
-      address: '456 Healthcare Center, DHA Phase 5',
-      phone: '+92-42-1234567',
-      manager: 'Dr. Fatima Ali'
-    },
-    {
-      city: 'Karachi',
-      address: '789 Medical Complex, Gulshan-e-Iqbal',
-      phone: '+92-51-1234567',
-      manager: 'Dr. Muhammad Rehman'
     }
   ];
 
@@ -95,7 +78,7 @@ const ContactPage = () => {
               Contact Fine Medicine Company
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed mb-8">
-              Ready to partner with Pakistan's leading pharmaceutical supplier? We're here to help 
+              Ready to partner with Pakistan&apos;s leading pharmaceutical supplier? We&apos;re here to help 
               with your pharmaceutical needs, answer your questions, and provide expert guidance.
             </p>
             <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
@@ -176,37 +159,37 @@ const ContactPage = () => {
         </div>
       </section>
 
-      {/* Office Locations */}
+      {/* Office Location - Changed to single office */}
       <section className="py-20 bg-white">
         <div className="container-max section-padding">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Our Office Locations
+              Our Office
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We have offices in major cities across Pakistan to serve you better. 
-              Visit us at any of our locations or contact your nearest office.
+              Visit our office in Islamabad or contact us directly for all your pharmaceutical needs.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Single office card centered */}
+          <div className="max-w-md mx-auto">
             {offices.map((office, index) => (
-              <div key={index} className="bg-gray-50 p-6 rounded-xl card-hover">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">{office.city} Office</h3>
-                <div className="space-y-3">
+              <div key={index} className="bg-gray-50 p-8 rounded-xl card-hover shadow-lg border border-gray-100">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">{office.city} Office</h3>
+                <div className="space-y-6">
                   <div className="flex items-start space-x-3">
-                    <MapPin className="h-5 w-5 text-green-600 mt-0.5" />
-                    <span className="text-gray-600">{office.address}</span>
+                    <MapPin className="h-6 w-6 text-green-600 mt-0.5" />
+                    <span className="text-gray-600 text-lg">{office.address}</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <Phone className="h-5 w-5 text-green-600" />
-                    <span className="text-gray-600">{office.phone}</span>
+                    <Phone className="h-6 w-6 text-green-600" />
+                    <span className="text-gray-600 text-lg">{office.phone}</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center">
+                    <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
                       <span className="text-green-600 text-xs">👨‍⚕️</span>
                     </div>
-                    <span className="text-gray-600">Manager: {office.manager}</span>
+                    <span className="text-gray-600 text-lg">CEO: {office.manager}</span>
                   </div>
                 </div>
               </div>
@@ -238,11 +221,11 @@ const ContactPage = () => {
                 Emergency: 03033336212
               </a>
               <a 
-                href="mailto:emergency@finemedicine.com" 
+                href="mailto:info@finemedicine.com" 
                 className="bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-200 shadow-lg inline-flex items-center justify-center"
               >
                 <Mail className="mr-2 h-5 w-5" />
-                Emergency Email
+                Contact Us
               </a>
             </div>
           </div>

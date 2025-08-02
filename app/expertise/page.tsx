@@ -317,7 +317,7 @@ const ExpertisePage = () => {
             </h2>
             <p className="text-xl mb-8 opacity-90">
               Join hundreds of healthcare providers who trust Fine Medicine Company 
-              for their pharmaceutical needs. Let's discuss how we can support your organization.
+              for their pharmaceutical needs. Let&apos;s discuss how we can support your organization.
             </p>
             <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
               <a 

@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
-import { Users, Award, Target, Eye, Heart, Shield, Globe, Clock } from 'lucide-react';
+import Image from 'next/image';
+import { Users, Award, Target, Eye, Heart, Shield, Globe, Clock, User } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'About Us - Fine Medicine Company',
-  description: 'Learn about Fine Medicine Company, Pakistan\'s trusted pharmaceutical supplier with 25+ years of experience serving healthcare professionals and institutions.',
+  description: 'Learn about Fine Medicine Company, Pakistan\'s trusted pharmaceutical supplier with 35+ years of experience serving healthcare professionals and institutions.',
 };
 
 const AboutPage = () => {
@@ -68,30 +69,14 @@ const AboutPage = () => {
     }
   ];
 
+  // Only keeping the CEO as requested - removed the image property
   const team = [
     {
       name: 'Capt (Retd.) Muhammad Younas Malik',
       position: 'Chief Executive Officer',
       experience: '35+ Years',
       education: 'Military Leadership, Business Management',
-      description: 'Visionary leader with extensive experience in pharmaceutical industry and healthcare management since 1986.',
-      image: 'https://images.pexels.com/photos/5327921/pexels-photo-5327921.jpeg?auto=compress&cs=tinysrgb&w=300'
-    },
-    {
-      name: 'Dr. Fatima Ali',
-      position: 'Chief Operating Officer',
-      experience: '20+ Years',
-      education: 'PharmD, MS Pharma Sciences',
-      description: 'Expert in pharmaceutical operations, quality assurance, and regulatory compliance.',
-      image: 'https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=300'
-    },
-    {
-      name: 'Muhammad Rehman',
-      position: 'Director of Supply Chain',
-      experience: '18+ Years',
-      education: 'MS Supply Chain Management',
-      description: 'Specialist in logistics, inventory management, and distribution optimization.',
-      image: 'https://images.pexels.com/photos/6129967/pexels-photo-6129967.jpeg?auto=compress&cs=tinysrgb&w=300'
+      description: 'Visionary leader with extensive experience in pharmaceutical industry and healthcare management since 1986.'
     }
   ];
 
@@ -131,7 +116,7 @@ const AboutPage = () => {
               35+ Years of Healthcare Excellence
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed mb-8">
-              Since 1986, Fine Medicine Company has been Pakistan's trusted pharmaceutical partner, 
+              Since 1986, Fine Medicine Company has been Pakistan&apos;s trusted pharmaceutical partner, 
               dedicated to improving healthcare outcomes through quality medicines and exceptional service.
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
@@ -167,7 +152,7 @@ const AboutPage = () => {
                   <h2 className="text-3xl font-bold text-gray-900">Our Mission</h2>
                 </div>
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  To be Pakistan's most trusted pharmaceutical supplier, delivering high-quality medicines 
+                  To be Pakistan&apos;s most trusted pharmaceutical supplier, delivering high-quality medicines 
                   and healthcare products that contribute to better health outcomes for communities across the nation. 
                   We are committed to excellence in every aspect of our operations, from procurement to delivery.
                 </p>
@@ -187,11 +172,18 @@ const AboutPage = () => {
             </div>
             
             <div className="bg-gradient-to-br from-yellow-100 to-yellow-200 rounded-2xl p-8">
-              <img 
-                src="https://images.pexels.com/photos/3873146/pexels-photo-3873146.jpeg?auto=compress&cs=tinysrgb&w=800" 
-                alt="Pharmaceutical laboratory" 
-                className="w-full h-80 object-cover rounded-xl"
-              />
+              <div className="relative w-full h-80 rounded-xl overflow-hidden">
+                <Image 
+                  src="https://images.pexels.com/photos/3873146/pexels-photo-3873146.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                  alt="Pharmaceutical laboratory" 
+                  width={800}
+                  height={600}
+                  className="object-cover"
+                  style={{ width: '100%', height: '100%' }}
+                  priority
+                  quality={90}
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -231,7 +223,7 @@ const AboutPage = () => {
               Our Journey
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From a small pharmaceutical distributor to Pakistan's leading healthcare partner.
+              From a small pharmaceutical distributor to Pakistan&apos;s leading healthcare partner.
             </p>
           </div>
 
@@ -258,37 +250,75 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Leadership Team */}
+      {/* Leadership Team - Modified with no photo */}
       <section className="py-20 bg-gray-50">
         <div className="container-max section-padding">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Leadership Team
+              Leadership
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our experienced leadership team brings decades of pharmaceutical industry expertise 
-              and unwavering commitment to healthcare excellence.
+              Under the visionary leadership of our founder and CEO, Fine Medicine Company 
+              has grown to become Pakistan&apos;s trusted pharmaceutical partner.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Redesigned CEO card without photo */}
+          <div className="max-w-3xl mx-auto">
             {team.map((member, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl shadow-lg card-hover">
-                <div className="text-center mb-6">
-                  <img 
-                    src={member.image} 
-                    alt={member.name}
-                    className="w-24 h-24 rounded-full object-cover mx-auto mb-4"
-                  />
-                  <h3 className="text-xl font-semibold text-gray-900 mb-1">{member.name}</h3>
-                  <p className="text-green-600 font-medium mb-2">{member.position}</p>
-                  <div className="flex justify-center space-x-4 text-sm text-gray-600">
-                    <span>{member.experience}</span>
-                    <span>•</span>
-                    <span>{member.education}</span>
+              <div key={index} className="bg-gradient-to-br from-green-50 to-green-100 p-8 md:p-12 rounded-xl shadow-lg border border-green-200">
+                <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
+                  {/* Decorative element instead of photo */}
+                  <div className="flex-shrink-0">
+                    <div className="w-20 h-20 md:w-24 md:h-24 bg-green-600 rounded-full flex items-center justify-center text-white text-2xl font-bold">
+                      {member.name.split(' ').map(n => n[0]).join('')}
+                    </div>
+                  </div>
+                  
+                  <div className="flex-grow text-center md:text-left">
+                    <div className="inline-flex items-center mb-3 bg-white px-3 py-1 rounded-full shadow-sm">
+                      <span className="text-green-700 text-sm font-medium">Since 1986</span>
+                    </div>
+                    
+                    <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+                      {member.name}
+                    </h3>
+                    
+                    <p className="text-green-700 font-semibold text-lg mb-4">
+                      {member.position}
+                    </p>
+                    
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      <span className="px-3 py-1 bg-white rounded-full text-gray-700 text-sm border border-gray-200 shadow-sm">
+                        {member.experience}
+                      </span>
+                      <span className="px-3 py-1 bg-white rounded-full text-gray-700 text-sm border border-gray-200 shadow-sm">
+                        {member.education}
+                      </span>
+                      <span className="px-3 py-1 bg-green-100 rounded-full text-green-800 text-sm font-medium shadow-sm">
+                        Founder & Visionary
+                      </span>
+                    </div>
+                    
+                    <p className="text-gray-700 leading-relaxed text-lg">
+                      {member.description}
+                    </p>
                   </div>
                 </div>
-                <p className="text-gray-600 text-center leading-relaxed">{member.description}</p>
+                
+                {/* Decorative elements */}
+                <div className="mt-8 border-t border-green-200 pt-6">
+                  <div className="flex justify-between items-center">
+                    <div className="flex items-center">
+                      <Shield className="h-5 w-5 text-green-600 mr-2" />
+                      <span className="text-green-700 font-medium">Trusted Leadership</span>
+                    </div>
+                    <div className="flex items-center">
+                      <Users className="h-5 w-5 text-green-600 mr-2" />
+                      <span className="text-green-700 font-medium">Team of 200+ Professionals</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
@@ -325,34 +355,7 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-green-400 via-green-500 to-green-600">
-        <div className="container-max section-padding">
-          <div className="text-center max-w-4xl mx-auto text-white">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Partner with Pakistan's Most Trusted Name
-            </h2>
-            <p className="text-xl mb-8 opacity-90">
-              Join the hundreds of healthcare providers who trust Fine Medicine Company 
-              for their pharmaceutical needs. Experience the difference of working with true healthcare partners.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-              <a 
-                href="/contact" 
-                className="bg-white text-green-600 hover:bg-gray-100 font-semibold px-8 py-4 rounded-lg transition-all duration-200 shadow-lg"
-              >
-                Get In Touch
-              </a>
-              <a 
-                href="/expertise" 
-                className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-green-600 font-semibold px-8 py-4 rounded-lg transition-all duration-200"
-              >
-                Our Services
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+     
     </div>
   );
 };
