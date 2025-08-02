@@ -2,7 +2,8 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Pill as Pills, Phone, Mail, MapPin, Clock, Facebook, Twitter, Linkedin, Instagram, Youtube, ArrowRight, Heart } from 'lucide-react';
+import Image from 'next/image';
+import { Phone, Mail, MapPin, Clock, Facebook, Twitter, Linkedin, Instagram, Youtube, ArrowRight, Heart } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -41,22 +42,20 @@ const Footer = () => {
         {/* Main Footer Content */}
         <div className="container-max section-padding py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-            {/* Company Info */}
+            {/* Company Info with Logo */}
             <div className="lg:col-span-1">
-              <div className="flex items-center space-x-3 mb-6">
+              <div className="flex items-center mb-6">
                 <div className="relative">
-                  <div className="bg-gradient-to-br from-emerald-500 to-green-600 p-3 rounded-2xl shadow-lg">
-                    <Pills className="h-7 w-7 text-white" />
+                  {/* Larger logo with no text */}
+                  <div className="bg-white/10 rounded-xl p-2 shadow-lg">
+                    <Image 
+                      src="/logo.png" 
+                      alt="Fine Medicine Logo"
+                      width={120} 
+                      height={120}
+                      className="object-contain"
+                    />
                   </div>
-                  <div className="absolute -top-1 -right-1 w-4 h-4 bg-yellow-400 rounded-full flex items-center justify-center">
-                    <div className="w-2 h-2 bg-white rounded-full"></div>
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                    Fine Medicine
-                  </h3>
-                  <p className="text-sm text-green-400 font-medium">Premium Healthcare Solutions</p>
                 </div>
               </div>
               <p className="text-gray-300 mb-8 leading-relaxed">
