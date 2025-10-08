@@ -162,7 +162,7 @@ const Footer = () => {
                   <div className="bg-green-500/20 p-2 rounded-lg group-hover:bg-green-500/30 transition-colors">
                     <Mail className="h-5 w-5 text-green-400" />
                   </div>
-                  <span className="text-gray-300 font-medium">info@finemedicine.com</span>
+                  <span className="text-gray-300 font-medium">info@finemedicinecompany.com </span>
                 </div>
                 
                 <div className="group flex items-start space-x-4 p-3 bg-gray-800/30 rounded-xl hover:bg-gray-800/50 transition-all duration-300">

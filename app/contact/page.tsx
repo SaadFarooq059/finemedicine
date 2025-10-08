@@ -29,7 +29,7 @@ const ContactPage = () => {
       icon: Mail,
       title: 'Email Address',
       details: [
-        'info@finemedicine.com'
+        'info@finemedicinecompany.com '
       ]
     },
     {
@@ -221,7 +221,7 @@ const ContactPage = () => {
                 Emergency: 03033336212
               </a>
               <a 
-                href="mailto:info@finemedicine.com" 
+                href="mailto:info@finemedicinecompany.com " 
                 className="bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-200 shadow-lg inline-flex items-center justify-center"
               >
                 <Mail className="mr-2 h-5 w-5" />
