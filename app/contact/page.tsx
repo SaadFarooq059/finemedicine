@@ -22,7 +22,16 @@ const ContactPage = () => {
       icon: Phone,
       title: 'Phone Number',
       details: [
-        '03033336212'
+        '+92-303-3336212'
+      ]
+    },
+    {
+      icon: Mail,
+      title: 'Managing Partner',
+      details: [
+        'MUHAMMAD NAWAZ',
+        'mnawaz@finemedicinecompany.com',
+        '+92-303-3336212'
       ]
     },
     {
@@ -49,7 +58,7 @@ const ContactPage = () => {
     {
       city: 'Islamabad',
       address: 'Site 2851 Kahuta Road Humak',
-      phone: '03033336212',
+      phone: '+92-303-3336212',
       manager: 'Capt (Retd.) Muhammad Younas Malik'
     }
   ];
@@ -83,11 +92,11 @@ const ContactPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
               <a 
-                href="tel:03033336212" 
+                href="tel:+923033336212" 
                 className="btn-primary inline-flex items-center justify-center"
               >
                 <Phone className="mr-2 h-5 w-5" />
-                Call Now: 03033336212
+                Call Now: +92-303-3336212
               </a>
               <a 
                 href="mailto:info@finemedicine.com" 
@@ -214,11 +223,11 @@ const ContactPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
               <a 
-                href="tel:03033336212" 
+                href="tel:+923033336212" 
                 className="bg-red-500 hover:bg-red-600 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-200 shadow-lg inline-flex items-center justify-center"
               >
                 <Phone className="mr-2 h-5 w-5" />
-                Emergency: 03033336212
+                Emergency: +92-303-3336212
               </a>
               <a 
                 href="mailto:info@finemedicinecompany.com " 

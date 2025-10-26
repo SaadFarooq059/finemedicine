@@ -69,14 +69,16 @@ const AboutPage = () => {
     }
   ];
 
-  // Only keeping the CEO as requested - removed the image property
+  // Only show the Managing Partner as requested
   const team = [
     {
-      name: 'Capt (Retd.) Muhammad Younas Malik',
-      position: 'Chief Executive Officer',
-      experience: '35+ Years',
-      education: 'Military Leadership, Business Management',
-      description: 'Visionary leader with extensive experience in pharmaceutical industry and healthcare management since 1986.'
+      name: 'MUHAMMAD NAWAZ',
+      position: 'Managing Partner',
+      experience: '20+ Years',
+      education: 'Business Management',
+      description: 'Managing Partner responsible for business development, partnerships and client relations.',
+      email: 'mnawaz@finemedicinecompany.com',
+      phone: '+92-303-3336212'
     }
   ];
 
@@ -296,7 +298,7 @@ const AboutPage = () => {
                         {member.education}
                       </span>
                       <span className="px-3 py-1 bg-green-100 rounded-full text-green-800 text-sm font-medium shadow-sm">
-                        Founder & Visionary
+                        {member.position}
                       </span>
                     </div>
                     
