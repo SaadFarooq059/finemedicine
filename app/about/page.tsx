@@ -288,7 +288,7 @@ const AboutPage = () => {
                   
                   <div className="flex-grow text-center md:text-left">
                     <div className="inline-flex items-center mb-3 bg-white px-3 py-1 rounded-full shadow-sm">
-                      <span className="text-green-700 text-sm font-medium">Since 1986</span>
+                    
                     </div>
                     
                     <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
