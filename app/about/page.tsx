@@ -72,9 +72,18 @@ const AboutPage = () => {
   // Only show the Managing Partner as requested
   const team = [
     {
+      name: 'Sher Muhammad',
+      position: 'Chief Executive Officer',
+      experience: '20+ Years',
+      education: 'Business & Executive Management',
+      description: 'Chief Executive Officer providing strategic leadership, operations oversight, and stakeholder engagement.',
+      email: '',
+      phone: ''
+    },
+    {
       name: 'MUHAMMAD NAWAZ',
       position: 'Managing Partner',
-      experience: '20+ Years',
+      experience: '10+ Years',
       education: 'Business Management',
       description: 'Managing Partner responsible for business development, partnerships and client relations.',
       email: 'mnawaz@finemedicinecompany.com',
