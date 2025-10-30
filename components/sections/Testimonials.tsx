@@ -8,7 +8,8 @@ const Testimonials = () => {
       hospital: 'Karachi General Hospital',
       content: 'Fine Medicine Company has been our trusted pharmaceutical partner for over 10 years. Their commitment to quality and timely delivery has never wavered.',
       rating: 5,
-      image: 'https://images.pexels.com/photos/5327921/pexels-photo-5327921.jpeg?auto=compress&cs=tinysrgb&w=200'
+      initials: 'SA',
+      color: 'bg-blue-500'
     },
     {
       name: 'Dr. Muhammad Hassan',
@@ -16,7 +17,8 @@ const Testimonials = () => {
       hospital: 'Lahore Medical Center',
       content: 'The quality assurance processes at Fine Medicine Company are exceptional. We have complete confidence in their pharmaceutical products.',
       rating: 5,
-      image: 'https://images.pexels.com/photos/6129967/pexels-photo-6129967.jpeg?auto=compress&cs=tinysrgb&w=200'
+      initials: 'MH',
+      color: 'bg-purple-500'
     },
     {
       name: 'Dr. Fatima Khan',
@@ -24,7 +26,8 @@ const Testimonials = () => {
       hospital: 'Islamabad Healthcare',
       content: 'Their supply chain management is outstanding. We never have to worry about stock-outs or delayed deliveries.',
       rating: 5,
-      image: 'https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=200'
+      initials: 'FK',
+      color: 'bg-green-500'
     }
   ];
 
@@ -63,7 +66,7 @@ const Testimonials = () => {
             Trusted by Healthcare Professionals
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Don't just take our word for it. See what healthcare professionals across Pakistan say about our services.
+            Don&apos;t just take our word for it. See what healthcare professionals across Pakistan say about our services.
           </p>
         </div>
 
@@ -72,25 +75,32 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div 
               key={index} 
-              className="bg-gray-50 p-6 rounded-xl card-hover relative"
+              className="bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-lg card-hover relative border border-gray-100"
             >
-              <Quote className="h-8 w-8 text-green-400 mb-4" />
+              {/* Quote icon */}
+              <div className="absolute top-6 right-6 opacity-10">
+                <Quote className="h-16 w-16 text-green-600" />
+              </div>
+              
+              {/* Rating stars */}
               <div className="flex items-center mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 text-green-400 fill-current" />
+                  <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                 ))}
               </div>
-              <p className="text-gray-700 mb-6 leading-relaxed">"{testimonial.content}"</p>
-              <div className="flex items-center space-x-4">
-                <img 
-                  src={testimonial.image} 
-                  alt={testimonial.name}
-                  className="w-12 h-12 rounded-full object-cover"
-                />
+              
+              {/* Testimonial content */}
+              <p className="text-gray-700 mb-8 leading-relaxed text-lg italic">
+                &ldquo;{testimonial.content}&rdquo;
+              </p>
+              
+              {/* Author info with avatar initials */}
+              <div className="flex items-center space-x-4 pt-6 border-t border-gray-200">
+                <div className={`${testimonial.color} w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0`}>
+                  <span className="text-white font-bold text-lg">{testimonial.initials}</span>
+                </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
-                  <p className="text-sm text-gray-600">{testimonial.position}</p>
-                  <p className="text-sm text-green-600 font-medium">{testimonial.hospital}</p>
+                  <h4 className="font-bold text-gray-900 text-lg">{testimonial.name}</h4>
                 </div>
               </div>
             </div>
